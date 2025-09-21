@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      // Path mapping for components directory
+      "@/components/*": ["components/*"],
+      // Path mapping for lib directory
+      "@/lib/*": ["lib/*"]
     }
   }
 }
