@@ -1,11 +1,11 @@
 import Redis from "ioredis";
 
 const redis = new Redis(
-//     {
-//   host: "433333",
-//   port: 3333,
-//   password: "" // 如果需要认证
-// }
+    {
+  host: "47.101.158.217",
+  port: 16379,
+  password: "" // 如果需要认证
+}
 );
 const initialData = {
   "1702459181837": '{"title":"sunt aut","content":"quia et suscipit suscipit recusandae","updateTime":"2023-12-13T09:19:48.837Z"}',
