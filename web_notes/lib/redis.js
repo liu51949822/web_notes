@@ -22,16 +22,16 @@ export async function getAllNotes() {
   return await redis.hgetall("notes")
 }
 
-export async function addNote(note) {
-    console.log('addNote')
-    const id = Date.now().toString()
-    await redis.hset("notes", [uuid], data);
+export async function addNote(data) {
+  console.log('addNote', data)
+  const uuid = Date.now().toString();
+  await redis.hset("notes", [uuid], data);
   return uuid
 }
 
-export async function editingNote(id, note) {
-    console.log('editingNote')
-    await redis.hset("notes", [id], note);
+export async function updateNote(uuid, data) {
+  console.log('updateNote', uuid, data)
+  await redis.hset("notes", [uuid], data);
 }
 
 export async function deleteNote(id) {
