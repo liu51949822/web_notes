@@ -41,8 +41,8 @@ export async function deleteNote(id) {
 
 export async function getNote(id) {
     console.log('getNote')
-    const note = await redis.hget("notes", [id]);
-  return note
-}   
+    const note = await redis.hget("notes", id);
+    return note
+}
 
 export default redis;

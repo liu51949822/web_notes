@@ -5,7 +5,8 @@ import { getAllNotes } from '@/lib/redis';
 export default async function SidebarNoteList() {
   // 获取笔记数据
   const notes = await getAllNotes() || {};
-
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  await sleep(10000);
   const arr = Object.entries(notes);
 
   if (arr.length === 0) {
