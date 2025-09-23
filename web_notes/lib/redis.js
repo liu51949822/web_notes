@@ -34,7 +34,7 @@ export async function updateNote(uuid, data) {
   await redis.hset("notes", [uuid], data);
 }
 
-export async function deleteNote(id) {
+export async function delNote(id) {
     console.log('deleteNote')
     await redis.hdel("notes", [id]);
 }

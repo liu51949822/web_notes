@@ -2,7 +2,10 @@ import NoteEditor from '@/components/NoteEditor'
 import {getNote} from '@/lib/redis';
 
 export default async function EditPage({ params }) {
-  const noteId = params.noteId;
+  // Next.js 15要求params需要await
+  const { id } = await params;
+  const noteId = id;
+  
   const note = await getNote(noteId)
 
   // 让效果更明显
@@ -18,6 +21,9 @@ export default async function EditPage({ params }) {
       </div>
     )
   }
+  
+  // 需要解析JSON字符串
+  const parsedNote = JSON.parse(note);
 
-  return <NoteEditor noteId={noteId} initialTitle={note.title} initialBody={note.content} />
+  return <NoteEditor noteId={noteId} initialTitle={parsedNote.title} initialBody={parsedNote.content} />
 }
