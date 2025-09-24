@@ -2,7 +2,6 @@ import NoteEditor from '@/components/NoteEditor'
 import {getNote} from '@/lib/redis';
 
 export default async function EditPage({ params }) {
-  // Next.js 15要求params需要await
   const { id } = await params;
   const noteId = id;
   

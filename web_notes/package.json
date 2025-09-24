@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build --turbopack && xcopy /E /I .next\\static .next\\standalone\\.next\\static && xcopy /E /I public .next\\standalone\\public",
     "start": "next start",
     "lint": "eslint"
   },
