@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack && xcopy /E /I .next\\static .next\\standalone\\.next\\static && xcopy /E /I public .next\\standalone\\public",
-    "start": "next start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node .next/standalone/server.js",
     "lint": "eslint"
   },
   "dependencies": {
